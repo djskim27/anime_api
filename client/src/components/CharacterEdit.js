@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import {Redirect} from 'react-router-dom'
+
 export default class CharacterEdit extends Component {
     state = {
         character: {
@@ -21,7 +23,8 @@ export default class CharacterEdit extends Component {
                     anime: this.props.location.state.character.anime,
                     image: this.props.location.state.character.image,
                     special_move: this.props.location.state.character.special_move
-                }
+                },
+                redirect: false
             }
         )
     }
@@ -40,6 +43,7 @@ export default class CharacterEdit extends Component {
         try {
             const res = await axios.patch(`/api/characters/${this.props.match.params.id}`, payload);
             console.log(res)
+            this.setState({redirect: true})
             
         } catch (err) {
             console.log(err)
@@ -50,6 +54,10 @@ export default class CharacterEdit extends Component {
       console.log(character)
     return (
       <div>
+          {this.state.redirect ? 
+          <Redirect to={`/character/${this.props.match.params.id}`} />
+          :
+          <div>
           <h3> Edit Character</h3>
           <form onSubmit={this._editCharacter}>
               <div>
@@ -71,6 +79,8 @@ export default class CharacterEdit extends Component {
               <br/>
               <button>Save Changes</button>
           </form>
+          </div>
+          }
       </div>
     )
   }
