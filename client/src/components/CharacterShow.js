@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Link} from  'react-router-dom'
 
 class CharacterShow extends Component {
     state = {
@@ -30,6 +31,21 @@ class CharacterShow extends Component {
                 <img src={this.state.character.image} className="imgSize"/>
                 <p><strong>Anime:</strong> {this.state.character.anime}</p>
                 <p><strong>Special Move:</strong> {this.state.character.special_move}</p>
+                <div>
+                    <Link to={
+                        {
+                            pathname: `/character/${this.state.character.id}/edit`,
+                            state: {
+                                character: this.state.character
+                            }
+
+                        }
+                        }>
+                        <button>Edit Character</button>
+                    </Link>
+                </div>
+                <br/>
+                <div><button>Delete Character</button></div>
             </div>
         );
     }

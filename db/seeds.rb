@@ -10,4 +10,4 @@ goku = Character.create(name: "Son Goku", anime: "Dragon Ball", image: "http://j
 
 ichigo = Character.create(name: "Kurosaki Ichigo", anime: "Bleach", image: "https://vignette.wikia.nocookie.net/infinite-loops/images/e/ed/Ichigo_Kurosaki.jpg/revision/latest?cb=20141223075403", special_move: "Getsuga Tenshou")
 
-naruto = Character.create(name: "Uzamaki Naruto", anime: "Naruto", image: "https://vignette.wikia.nocookie.net/youtubepoop/images/e/ea/Naruto.png/revision/latest?cb=20150422212156", special_move: "Rasengan")
+naruto = Character.create(name: "Uzamaki Naruto", anime: "Naruto", image: "https://vignette.wikia.nocookie.net/youtubepoop/images/e/ea/Naruto.png/revision/latest?cb=20150422212156", special_move: "Rasengann")
